@@ -10,7 +10,6 @@ class SharkTank extends React.Component {
 
   render() {
     const livingStudents = this.props.liveStudents;
-    console.log(livingStudents);
     const studentCards = livingStudents.map((student) => <LiveStudents key={student.id} student={student} />);
 
     return (
