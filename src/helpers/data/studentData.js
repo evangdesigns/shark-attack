@@ -139,4 +139,16 @@ const students = [
   },
 ];
 
-export default { students };
+const isAlive = () => {
+  const liveStudents = students.filter((x) => x.isDead === false);
+  return liveStudents;
+};
+
+const isDead = () => {
+  const deadStudents = students.filter((x) => x.isDead === true);
+  return deadStudents;
+};
+
+const getStudents = () => students;
+
+export default { getStudents, isAlive, isDead };
