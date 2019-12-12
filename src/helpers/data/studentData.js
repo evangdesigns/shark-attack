@@ -45,7 +45,7 @@ const students = [
     id: 'student8',
     firstName: 'Evan',
     lastName: 'Grabenstein',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student9',
@@ -69,7 +69,7 @@ const students = [
     id: 'student12',
     firstName: 'Jamie',
     lastName: 'Phillips',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student13',
@@ -81,7 +81,7 @@ const students = [
     id: 'student14',
     firstName: 'John',
     lastName: 'Key',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student15',
@@ -93,7 +93,7 @@ const students = [
     id: 'student16',
     firstName: 'John',
     lastName: 'Johnson',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student17',
@@ -139,16 +139,16 @@ const students = [
   },
 ];
 
-const isAlive = () => {
+const livingStudents = () => {
   const liveStudents = students.filter((x) => x.isDead === false);
   return liveStudents;
 };
 
-const isDead = () => {
+const dearlyBeloved = () => {
   const deadStudents = students.filter((x) => x.isDead === true);
   return deadStudents;
 };
 
 const getStudents = () => students;
 
-export default { getStudents, isAlive, isDead };
+export default { getStudents, livingStudents, dearlyBeloved };
