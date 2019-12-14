@@ -6,6 +6,16 @@ import studentShape from '../../helpers/propz/studentShape';
 class SharkTank extends React.Component {
   static propTypes = {
     liveStudents: PropTypes.arrayOf(studentShape.studentShape),
+    sharkAttack: PropTypes.func,
+    followTheLight: PropTypes.func,
+  }
+
+  sharkAttackEvent = (e) => {
+    const { liveStudents } = this.props;
+    const random = liveStudents[Math.floor(Math.random() * liveStudents.length)];
+    console.log(random.id);
+    e.preventDefault();
+    // followTheLight(random.id);
   }
 
   render() {
@@ -13,8 +23,11 @@ class SharkTank extends React.Component {
     const studentCards = livingStudents.map((student) => <LiveStudents key={student.id} student={student} />);
 
     return (
-      <div className="d-flex flex-wrap justify-content-between">
-        {studentCards}
+      <div>
+        <div className="btn btn-danger"onClick={this.sharkAttackEvent} >SHARK ATTACK!!</div>
+        <div className="d-flex flex-wrap justify-content-between">
+          {studentCards}
+        </div>
       </div>
     );
   }
