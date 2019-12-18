@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GraveStone from '../gravestone/gravestone';
 import studentShape from '../../helpers/propz/studentShape';
+import './graveyard.scss';
 
 class GraveYard extends React.Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class GraveYard extends React.Component {
     const studentCards = dedStudents.map((student) => <GraveStone key={student.id} student={student} />);
 
     return (
-      <div className="d-flex flex-wrap justify-content-between">
+      <div className="d-flex flex-wrap justify-content-between graveyard">
         {studentCards}
       </div>
     );

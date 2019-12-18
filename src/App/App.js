@@ -23,13 +23,21 @@ class App extends React.Component {
     this.setState({ deadStudents });
   }
 
+  followTheLight = (studentId) => {
+    studentData.followTheLight(studentId);
+    this.setState({
+      deadStudents: studentData.dearlyBeloved(),
+      liveStudents: studentData.livingStudents(),
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <div className="d-flex">
           <div className="col-6">
             <h1 className="text-center">Shark Tank</h1>
-            <SharkTank liveStudents={this.state.liveStudents} />
+            <SharkTank liveStudents={this.state.liveStudents} followTheLight={this.followTheLight} />
           </div>
           <div className="col-6">
             <h1 className="text-center">Grave Yard</h1>

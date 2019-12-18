@@ -149,6 +149,17 @@ const dearlyBeloved = () => {
   return deadStudents;
 };
 
+const followTheLight = (studentId) => {
+  const dedStudent = students.findIndex((x) => x.id === studentId);
+  students[dedStudent].isDead = true;
+};
+
+
 const getStudents = () => students;
 
-export default { getStudents, livingStudents, dearlyBeloved };
+export default {
+  getStudents,
+  livingStudents,
+  dearlyBeloved,
+  followTheLight,
+};
