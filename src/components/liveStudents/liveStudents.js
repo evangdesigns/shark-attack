@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import studentShape from '../../helpers/propz/studentShape';
+import './liveStudents.scss';
 
 class LiveStudents extends React.Component {
   static propTypes = {
@@ -12,8 +13,8 @@ class LiveStudents extends React.Component {
     const { student } = this.props;
 
     return (
-      <div className="card col-4">
-        <h5 className="card-title">{student.firstName}<br/>{student.lastName}</h5>
+      <div className="lifeRaft">
+        <h5 className="card-title align-middle">{student.firstName}<br/>{student.lastName}</h5>
       </div>
     );
   }

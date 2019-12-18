@@ -1,0 +1,11 @@
+.gravestone {
+  height:200px;
+  width: 150px;
+  border-radius: 100px 100px 0 0;
+  background-color: grey;
+  margin: 20px 5px;
+  .title {
+    margin-top:50px;
+    color: lightgray;
+  }
+}

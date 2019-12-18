@@ -150,8 +150,8 @@ const dearlyBeloved = () => {
 };
 
 const followTheLight = (studentId) => {
-  students.find((x) => x.id === studentId);
-  students.isDead = true;
+  const dedStudent = students.findIndex((x) => x.id === studentId);
+  students[dedStudent].isDead = true;
 };
 
 

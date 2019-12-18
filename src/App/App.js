@@ -25,8 +25,10 @@ class App extends React.Component {
 
   followTheLight = (studentId) => {
     studentData.followTheLight(studentId);
-    const students = studentData.getStudents();
-    this.setState({ students });
+    this.setState({
+      deadStudents: studentData.dearlyBeloved(),
+      liveStudents: studentData.livingStudents(),
+    });
   }
 
   render() {
@@ -35,7 +37,7 @@ class App extends React.Component {
         <div className="d-flex">
           <div className="col-6">
             <h1 className="text-center">Shark Tank</h1>
-            <SharkTank liveStudents={this.state.liveStudents} followTheLight={this.state.followTheLight} />
+            <SharkTank liveStudents={this.state.liveStudents} followTheLight={this.followTheLight} />
           </div>
           <div className="col-6">
             <h1 className="text-center">Grave Yard</h1>

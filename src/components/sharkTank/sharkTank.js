@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LiveStudents from '../liveStudents/liveStudents';
 import studentShape from '../../helpers/propz/studentShape';
+import './sharkTank.scss';
 
 class SharkTank extends React.Component {
   static propTypes = {
@@ -11,21 +12,28 @@ class SharkTank extends React.Component {
   }
 
   sharkAttackEvent = (e) => {
-    const { liveStudents } = this.props;
+    const { liveStudents, followTheLight } = this.props;
     const random = liveStudents[Math.floor(Math.random() * liveStudents.length)];
-    console.log(random.id);
     e.preventDefault();
-    // followTheLight(random.id);
+    followTheLight(random.id);
   }
 
   render() {
-    const livingStudents = this.props.liveStudents;
-    const studentCards = livingStudents.map((student) => <LiveStudents key={student.id} student={student} />);
+    const disableButton = {};
+    const { liveStudents } = this.props;
+    const studentCards = liveStudents.map((student) => <LiveStudents key={student.id} student={student} />);
+    const hasStudents = liveStudents.length > 0;
+    if (hasStudents) {
+      disableButton.disabled = false;
+    } else {
+      disableButton.disabled = true;
+    }
 
     return (
       <div>
-        <div className="btn btn-danger"onClick={this.sharkAttackEvent} >SHARK ATTACK!!</div>
-        <div className="d-flex flex-wrap justify-content-between">
+
+        <button className="btn btn-danger" {...disableButton} onClick={this.sharkAttackEvent} >SHARK ATTACK!!</button>
+        <div className="d-flex flex-wrap justify-content-between tank">
           {studentCards}
         </div>
       </div>

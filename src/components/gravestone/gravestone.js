@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import studentShape from '../../helpers/propz/studentShape';
+import './gravestone.scss';
 
 class GraveStone extends React.Component {
   static propTypes = {
@@ -12,8 +13,8 @@ class GraveStone extends React.Component {
     const { student } = this.props;
 
     return (
-      <div className="card col-4">
-        <h5 className="card-title">{student.firstName}<br/>{student.lastName}</h5>
+      <div className="gravestone">
+        <h5 className="title">{student.firstName}<br/>{student.lastName}</h5>
       </div>
     );
   }
